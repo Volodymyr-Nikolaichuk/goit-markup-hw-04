@@ -2,6 +2,7 @@
   --primary-brand: #4d5ae5;
   --pressed-state: #404bbf;
   --dark: #2e2f42;
+  --hero-background: rgba(46, 47, 66, 0.7);
   --success: #31d0aa;
   --text: #434455;
   --subtle-text: #8e8f99;
@@ -9,6 +10,7 @@
   --light: #f4f4fd;
   --modal-overlay: #2e2f42;
   --hero-background: #2e2f42;
+  --cloud: rgba(244, 244, 253, 1);
 
   --bacground-color: #e5e5e5;
   --background-cards: #ffffff;
@@ -57,6 +59,10 @@ h3 {
   letter-spacing: 0.02em;
 }
 
+.section {
+  margin: 0;
+}
+
 .body {
   font-weight: 400;
   font-size: 16px;
@@ -75,28 +81,6 @@ h3 {
   cursor: pointer;
 }
 
-/* Обов'язково необхідно прибирати крайні MARGIN
-крайніх елементів рядка чи стовпчка. 
-Для цього можна використати (наприклад):
-.site-nav .item:not( : first-child) {
-  margin-right: 40px;
-}
-або
-.site-nav .item + .item {
-  margin-right: 40px;
-}
-Це дасть всім елементам (дітям) правий відступ 
-окрім першого
-  */
-
-/* .container {
-  outline: 1px dashed #31d0aa;
-}
-
-/* .section {
-  outline: 1px dashed tomato;
-} */
-
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -107,10 +91,6 @@ h3 {
   border-bottom: 1px solid var(--accent);
 }
 
-.nav-links.container {
-
-}
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -119,13 +99,9 @@ h3 {
   max-width: 1158px;
 }
 
-/* .page-header .container {
-  margin-bottom: 0;
-} */
-
 .logo {
   margin-right: 76px;
-
+  padding-bottom: 4px;
   color: var(--dark);
   font-family: Raleway, sans-serif;
   font-weight: 800;
@@ -155,6 +131,7 @@ h3 {
 .adress-header {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 4px;
 }
 
 .nav-links {
@@ -180,9 +157,32 @@ h3 {
   color: var(--pressed-state);
 }
 
+.link.contact {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.line {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: var(--pressed-state);
+  border-radius: 2px;
+}
+
 .link.contact:hover,
 .link.contact:focus {
   color: var(--pressed-state);
+}
+
+.contacts:active {
+  color: var(--pressed-state);
+  margin-top: 24px;
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: var(--pressed-state);
+  border-radius: 2px;
 }
 
 .portfolio,
@@ -197,21 +197,32 @@ h3 {
   color: var(--text);
 }
 
-.hero {
-  padding-top: 188px;
-  padding-bottom: 188px;
+.adress-header{
+  margin-left: auto;
+}
 
-  background-color: var(--hero-background);
+.hero {
+  max-width: 1440px;
+  background-image: linear-gradient( to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../img/people-office\ 1-min.jpg);
+    
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  padding: 188px 0px;
   text-align: center;
 }
 
+
+
 .hero-title {
   margin-bottom: 48px;
-
+  
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
-  text-align: center;
   letter-spacing: 0.02em;
   color: var(--background-cards);
 }
@@ -221,7 +232,6 @@ h3 {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  align-items: center;
   letter-spacing: 0.04em;
 }
 
@@ -261,6 +271,22 @@ h3 {
 /* .benefits-list .list-item:not(:last-child) {
   margin-right: 24px;
 } */
+
+
+.icon-box {
+  box-sizing: border-box;
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 24px 100px;
+  background-color: var(--cloud);
+}
+
+.icon-box .feature-icon {
+  width: 64px;
+  height: 64px;
+}
 
 .benefits .ben-title {
   margin-bottom: 8px;
@@ -307,8 +333,9 @@ h3 {
 
 }
 
-.our-team {
+.our-team.section{
   background-color: var(--light);
+
 }
 
 .our-team .container {
@@ -324,7 +351,6 @@ h3 {
 }
 
 .our-team .list-item {
-
   background-color: var(--background-cards);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -339,6 +365,81 @@ h3 {
   display: block;
 }
 
+/* Customers */
+
+.customers-logo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  row-gap: 24px;
+
+}
+
+.customers.section {
+  padding-top: 130px;
+  text-align: center;
+}
+
+.customers-logo .link {
+  display: flex;
+  justify-content:space-between;
+  text-align: center;
+  width: 168px;
+  height: 88px;
+  padding: 15px 31px;
+
+  border: 1px solid var(--subtle-text);
+  border-radius: 4px;
+  color: var(--subtle-text);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+.customers-logo .link:focus,
+.customers-logo .link:hover {
+  color: var(--pressed-state);
+  border: 1px solid var(--pressed-state);
+}
+
+/* ICONS Sotial networks */
+
+.action {
+  display: flex;
+  justify-content: baseline;
+
+}
+
+.list-item.icon {
+ box-shadow:none;
+}
+
+.link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  background-color: var(--primary-brand);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+.svg-icon {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  background-color: var(--pressed-state);
+}
+
+/* Cards */
+
 .pre-title {
   margin-bottom: 8px;
 
@@ -352,9 +453,6 @@ h3 {
   padding-top: 96px;
 }
 
-.list.filter{
-  margin-bottom: 76px;
-}
 
 .button-filter {
   border: 1px solid var(--accent);
@@ -375,6 +473,7 @@ h3 {
 }
 
 .list.filter {
+  margin-bottom: 76px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -399,7 +498,15 @@ h3 {
   display: block;
 }
 
+.list.card:hover,
+.list.card:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 
+.list.card .link:hover,
+.list.card .link:focus {
+  border: 0.5px solid #F4F4FD;
+}
 
 .card-content {
   border: 1px solid var(--accent);
@@ -415,25 +522,15 @@ h3 {
   row-gap: 48px;
 }
 
-/* .card {
-  width: 360px;
-  margin-right: 24px;
-  margin-bottom: 24px;
-}
-
-.card:nth-child(3n) {
-  margin-right: 0px;
-}
-
-.card:nth-last-child(-n + 3) {
-  margin-bottom: 120px;
-} */
-
 
 .footer {
   padding: 100px 0px;
 
   background-color: var(--dark);
+}
+
+.footer .container {
+  display: flex;
 }
 
 .logo-footer {
@@ -443,9 +540,39 @@ h3 {
 }
 
 .body-footer {
+
   margin-top: 16px;
+  margin-right: 120px;
   width: 264px;
 
   color: var(--accent);
 }
 
+.footer-social {
+  width: 208px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social .body {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--background-cards);
+}
+
+.footer .list.action {
+  gap: 16px;
+  margin: 16px 80px 0 0;
+}
+
+.footer-social .link-icon {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social .link-icon:hover,
+.footer-social .link-icon:focus {
+  background: var(--success);
+}
